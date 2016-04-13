@@ -1,0 +1,57 @@
+= form_for @ptpktp do |f|
+  - if @ptpktp.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@ptpktp.errors.count, "error")} prohibited this ptpktp from being saved:"
+      %ul
+        - @ptpktp.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label "Дата:"
+    = f.date_select :date, class: "textbox"
+  .field
+    = f.label "Адрес:"
+    = f.text_field :address, class: "textbox"
+  .field
+    = f.label "Время сообщения:"
+    %span.timepicker
+      = f.time_select :msg_time, class: "textbox"
+  .field
+    = f.label "№ ПЧ"
+    = f.select :pch,
+        [["ПСЧ-62"],
+        ["ПЧ-63"],
+        ["ПЧ-163"],
+        ["ППС РТ Елантово"],
+        ["ППС РТ Сухарево"],
+        ["МПО Верхняя Уратьма"],
+        ["ДПК Шингальчи"],
+        ["ДПК Верхние Челны"],
+        ["ДПК Благодатное"],
+        ["ДПК Нижняя Уратьма"],
+        ["ДПК Кармалы"],
+        ["ДПК Кулмакса"],
+        ["ДПК Щереметьево"],
+        ["ДПК Старошешминск"],
+        ["ДПК Каенлы"],
+        ]
+  .field
+    = f.label "План/карточка"
+    = f.select :plan_cart,
+        [["План"],["Карточка"]]
+  .field
+    = f.label "№ Плана/карточки"
+    = f.text_field :numberptpktp, class: "textbox"
+  .field
+    = f.label "Техника"
+    = f.text_field :hod, class: "textbox"
+  .field
+    = f.label "Караул:"
+    = f.select :karaul,
+    [["1 караул"],
+    ["2 караул"],
+    ["3 караул"],
+    ["4 караул"],
+    ["Резерв"],
+    ]
+  .actions
+    = f.submit 'Сохранить'

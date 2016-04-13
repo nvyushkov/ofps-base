@@ -1,0 +1,70 @@
+= form_for @zanyatium do |f|
+  - if @zanyatium.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@zanyatium.errors.count, "error")} prohibited this ptpktp from being saved:"
+      %ul
+        - @zanyatium.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label "Дата:"
+    = f.date_select :date, class: "textbox"
+  .field
+    = f.label "Адрес:"
+    = f.text_field :address, class: "textbox"
+  .field
+    = f.label "Время:"
+    %span.timepicker
+      = f.time_select :msg_time, class: "textbox"
+  .field
+    = f.label "№ ПЧ"
+    = f.select :pch,
+        [["ПСЧ-62"],
+        ["ПЧ-63"],
+        ["ПЧ-163"],
+        ["ППС РТ Елантово"],
+        ["ППС РТ Сухарево"],
+        ["МПО Верхняя Уратьма"],
+        ["ДПК Шингальчи"],
+        ["ДПК Верхние Челны"],
+        ["ДПК Благодатное"],
+        ["ДПК Нижняя Уратьма"],
+        ["ДПК Кармалы"],
+        ["ДПК Кулмакса"],
+        ["ДПК Щереметьево"],
+        ["ДПК Старошешминск"],
+        ["ДПК Каенлы"],
+        ]
+  .field
+    = f.label "Руководитель"
+    = f.text_field :rukovoditel, class: "textbox"
+  .field
+    = f.label "Занятия:"
+    = f.select :zanyatiya,
+      [["Тренировки ЦУКС ЕДДС"],
+      ["ПСП ГДЗС"],
+      ["ПТхП"],
+      ["Спец. техника"],
+      ["ООТП и ПАСР"],
+      ["ТДК"],
+      ["ТК"],
+      ["Нормативы"],
+      ["ПТУ"],
+      ["Пров. боеготовность"],
+      ["Эвакуация"],
+      ["Учения"],
+      ["Подготовка к учениям"],
+      ]
+  .field
+    = f.label "Техника"
+    = f.text_field :hod, class: "textbox"
+  .field
+    = f.label "Караул:"
+    = f.select :karaul,
+    [["1 караул"],
+    ["2 караул"],
+    ["3 караул"],
+    ["4 караул"],
+    ["Резерв"],
+    ]
+  .actions
+    = f.submit 'Сохранить'

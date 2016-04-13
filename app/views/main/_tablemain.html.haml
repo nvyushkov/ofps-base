@@ -1,0 +1,75 @@
+%table.main
+  %thead
+    %th
+      Наименование
+    %th
+      За сутки
+      %br
+      %small
+        (#{(@today-1).strftime("%d.%m 08:30")} - #{@today.strftime("%d.%m 08:30")})
+    %th
+      За неделю
+      %br
+      %small
+        (#{(@today).strftime("%d.%m")} - #{(@to_week_day).strftime("%d.%m")})
+    %th
+      Всего
+  %tbody
+    /*%tr{class:"main", onclick:"window.location.href='/fire_stat'; return false"}
+    %tr.main
+      %td.tr_name Пожаров
+      %td #{@fire_daily}
+      %td #{@fire_wekly}
+      %td #{@fire_count}
+    %tr.main
+      %td.tr_name Ложных
+      %td #{@lozhn_daily}
+      %td #{@lozhn_wekly}
+      %td #{@lozh_count}
+    %tr.main
+      %td.tr_name Загораний
+      %td #{@vozgor_daily}
+      %td #{@vozgor_wekly}
+      %td #{@vozgor_count}
+    %tr.main
+      %td.tr_name КЗ
+      %td #{@proch_kz_daily}
+      %td #{@kz_wekly}
+      %td #{@count_kz}
+    %tr.main
+      %td.tr_name ДТП
+      %td #{@dtp_daily}
+      %td #{@dtp_wekly}
+      %td #{@dtp_count}
+    %tr.main
+      %td.tr_name Прочих
+      %td #{@prochie_daily}
+      %td #{@prochie_wekly}
+      %td #{@prochie_count}
+    %tr.main
+      %td.tr_name ПТП/КТП
+      %td #{@ptpktp_daily}
+      %td #{@ptpktp_wekly}
+      %td #{@ptpktp_count}
+    %tr.main
+      %td.tr_name Занятий
+      %td #{@zanyatia_daily}
+      %td #{@zanyatia_wekly}
+      %td #{@zanyatia_count}
+    %tr.main
+      %td.tr_name Карточек 112
+      %td #{@edds_daily}
+      %td #{@edds_wekly}
+      %td #{@edds_count}
+    %tr.main
+      %td.tr_name Сигналов
+      %td #{@fpsignal_daily}
+      %td #{@fpsignal_wekly}
+      %td #{@fpsignal_count}
+    %tr.none_border
+      %td
+        = link_to "За сутки", daily_path
+      %td
+      %td
+        = link_to "За неделю", weekly_path
+      %td

@@ -1,0 +1,47 @@
+%h1
+  План/карточка
+  = @ptpktp.date.strftime("%d.%m.%y")
+  = link_to 'Изменить', edit_ptpktp_path(@ptpktp)
+  = link_to 'К списку ПТП/КТП', ptpktps_path
+  = link_to 'Удалить', @ptpktp, :method => :delete
+%table.show_stat.main
+  %tr
+    %td.names
+      Дата
+    %td
+      = @ptpktp.date.strftime("%d.%m.%y")
+  %tr
+    %td.names
+      Время сообщения
+    %td
+      = @ptpktp.msg_time.strftime("%k:%M")
+  %tr
+    %td.names
+      Адрес
+    %td
+      = @ptpktp.address
+  %tr
+    %td.names
+      № ПЧ
+    %td
+      = @ptpktp.pch
+  %tr
+    %td.names
+      План/карточка
+    %td
+      = @ptpktp.plan_cart
+  %tr
+    %td.names
+      № плана/карточки
+    %td
+      = @ptpktp.numberptpktp
+  %tr
+    %td.names
+      Ход
+    %td
+      = @ptpktp.hod
+  %tr
+    %td.names
+      Караул
+    %td
+      = @ptpktp.karaul

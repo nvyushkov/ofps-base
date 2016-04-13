@@ -1,0 +1,137 @@
+%h1
+  Подробности о загорании
+  = @vozgorany.date.strftime("%d.%m.%y")
+  = link_to 'Изменить', edit_vozgorany_path(@vozgorany)
+  = link_to 'К списку загораний', vozgoranies_path
+  = link_to 'Удалить', @vozgorany, :method => :delete
+%table.show_stat.main
+  %tr
+    %td.names
+      Дата
+    %td
+      = @vozgorany.date.strftime("%d.%m.%y")
+  %tr
+    %td.names
+      Время сообщения
+    %td
+      = @vozgorany.msg_time.strftime("%k:%M")
+  %tr
+    %td.names
+      Объект
+    %td
+      = @vozgorany.object
+  %tr
+    %td.names
+      Адрес
+    %td
+      = @vozgorany.address
+  %tr
+    %td.names
+      Что сгорело
+    %td
+      = @vozgorany.chto_sgorelo
+  %tr
+    %td.names
+      Ущерб (руб.)
+    %td
+      = @vozgorany.usherb
+  %tr
+    %td.names
+      Спасено (руб.)
+    %td
+      = @vozgorany.spasenorub
+  %tr
+    %td.names
+      Погибло
+    %td
+      = @vozgorany.pogibshie
+  %tr
+    %td.names
+      Пострадало
+    %td
+      = @vozgorany.postradavshie
+  %tr
+    %td.names
+      Спасено (люд.)
+    %td
+      = @vozgorany.spasenolud
+  %tr
+    %td.names
+      Площадь (м.кв)
+    %td
+      = @vozgorany.ploshad
+  %tr
+    %td.names
+      Техника
+    %td
+      = @vozgorany.technic
+  %tr
+    %td.names
+      РТП
+    %td
+      = @vozgorany.rtp
+  %tr
+    %td.names
+      Караул
+    %td
+      = @vozgorany.karaul
+  %tr
+    %td.names
+      Ствол "А"
+    %td
+      = @vozgorany.stvol_a
+  %tr
+    %td.names
+      Ствол "Б"
+    %td
+      = @vozgorany.stvol_b
+  %tr
+    %td.names
+      Ствол "АПС"
+    %td
+      = @vozgorany.stvol_aps
+  %tr
+    %td.names
+      Ствол "ГПС"
+    %td
+      = @vozgorany.stvol_gps
+  %tr
+    %td.names
+      кол-во ГДЗС
+    %td
+      = @vozgorany.gdzs
+  %tr
+    %td.names
+      время ГДЗС
+    %td
+      = @vozgorany.gdzs_time.strftime("%k:%M")
+  %tr
+    %td.names
+      Вр. прибытия
+    %td
+      = @vozgorany.pribytie_time.strftime("%k:%M")
+  %tr
+    %td.names
+      Вр. 1 ствола
+    %td
+      = @vozgorany.pervystvol_time.strftime("%k:%M")
+  %tr
+    %td.names
+      Локализация
+    %td
+      = @vozgorany.local_time.strftime("%k:%M")
+  %tr
+    %td.names
+      1 Ликвидация
+    %td
+      = @vozgorany.licvidation1_time.strftime("%k:%M")
+  %tr
+    %td.names
+      2 Ликвидация
+    %td
+      = @vozgorany.licvidation2_time.strftime("%k:%M")
+  %tr
+    %td.names
+      Вр. возвращения
+    %td
+      = @vozgorany.comeback_time.strftime("%k:%M")

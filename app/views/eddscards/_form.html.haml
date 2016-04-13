@@ -1,0 +1,31 @@
+= form_for @eddscard do |f|
+  - if @eddscard.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@eddscard.errors.count, "error")} prohibited this eddscard from being saved:"
+      %ul
+        - @eddscard.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label " Телефон: "
+    = f.text_field :tel, class: "textbox"
+  .field
+    = f.label "Дата:"
+    = f.date_select :date, class: "textbox"
+  .field
+    = f.label "Время сообщения:"
+    %span.timepicker
+      = f.time_select :msg_time, class: "textbox"
+  .field
+    = f.label "Описание:"
+    = f.text_field :description, class: "textbox"
+  .field
+    = f.label "Адрес:"
+    = f.text_field :address, class: "textbox"
+  .field
+    = f.label " Ф И О (заявитель): "
+    = f.text_field :fio, class: "textbox"
+  .field
+    = f.label "Службы:"
+    = f.text_field :sluzhby, class: "textbox"
+  .actions
+    = f.submit 'Сохранить'

@@ -1,0 +1,50 @@
+%h1
+  Карточки ЕДДС
+  = link_to 'Сбросить фильтр', eddscards_path, class: "new_record"
+  %span#how_much
+  %span#notice= notice
+  = link_to 'Новая запись', new_eddscard_path, class: "new_record"
+%table.stat
+  %thead
+    %tr.filtres
+      %th.date
+        Дата
+        %input.datepicker
+      %th.msg_time
+        Вр. сообщ.
+      %th.fio
+        Ф.И.О.
+        %small
+          (заявитель)
+      %th.tel
+        Телефон
+      %th.address
+        Адрес
+      %th.sluzhby
+        Службы
+      %th.description
+        Описание
+      %th.options
+        Опции
+  %tbody
+    - @eddscards.each do |eddscard|
+      %tr.data
+        %td.date
+          = eddscard.date.strftime("%d.%m.%y")
+        %td.msg_time
+          = eddscard.msg_time.strftime("%k:%M")
+        %td.fio
+          = eddscard.fio
+        %td.tel
+          = eddscard.tel
+        %td.address
+          = eddscard.address
+        %td.sluzhby
+          = eddscard.sluzhby
+        %td.description
+          = eddscard.description
+        %td.options
+          = link_to 'Показать', eddscard
+          = link_to 'Изменить', edit_eddscard_path(eddscard)
+          = link_to 'Удалить', eddscard, :method => :delete
+%br

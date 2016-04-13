@@ -1,0 +1,37 @@
+%h1
+  = @fpsignal.type_signal
+  = @fpsignal.date.strftime("%d.%m.%y")
+  = link_to 'Изменить', edit_fpsignal_path(@fpsignal)
+  = link_to 'К списку сигналов', fpsignals_path
+  = link_to 'Удалить', @fpsignal, :method => :delete
+%table.show_stat.main
+  %tr
+    %td.names
+      Дата
+    %td
+      = @fpsignal.date.strftime("%d.%m.%y")
+  %tr
+    %td.names
+      Время сообщения
+    %td
+      = @fpsignal.msg_time.strftime("%k:%M")
+  %tr
+    %td.names
+      Тип сигнала
+    %td
+      = @fpsignal.type_signal
+  %tr
+    %td.names
+      Техника
+    %td
+      = @fpsignal.technic
+  %tr
+    %td.names
+      Описание
+    %td
+      = @fpsignal.description
+  %tr
+    %td.names
+      Караул
+    %td
+      = @fpsignal.karaul

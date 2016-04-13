@@ -1,0 +1,58 @@
+= form_for @prochy do |f|
+  - if @prochy.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@prochy.errors.count, "error")} prohibited this prochy from being saved:"
+      %ul
+        - @prochy.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label "Дата:"
+    = f.date_select :date, class: "textbox"
+  .field
+    = f.label "Адрес:"
+    = f.text_field :address, class: "textbox"
+  .field
+    = f.label "Время сообщения:"
+    %span.timepicker
+      = f.time_select :msg_time, class: "textbox"
+  .field
+    = f.label "Тип выезда"
+    = f.select :type_viezd,
+        [["Взаимодействие 02"],
+        ["Взаимодействие 03"],
+        ["Взаимодействие 04"],
+        ["Взаимодействие 072"],
+        ["Взаимодействие с дугими службами"],
+        ["Привлечение по межрайонному плану"],
+        ["Ночная проверка"],
+        ["КЗ"],
+        ["Подгорание пищи"],
+        ["Ложный СПС"],
+        ["Заправка АП"],
+        ["Заправка АЗС"],
+        ["ПМД"],
+        ["Терракт"],
+        ["Служебный"],
+        ["Газопроводы"],
+        ["Открытая вода"],
+        ["Ложные"],
+        ["Потеряшки"],
+        ["Метеоявления"],
+        ]
+  .field
+    = f.label "Службы"
+    = f.text_field :sluzhby
+  .field
+    = f.label "Описание"
+    = f.text_field :description
+  .field
+    = f.label "Караул:"
+    = f.select :karaul,
+    [["1 караул"],
+    ["2 караул"],
+    ["3 караул"],
+    ["4 караул"],
+    ["Резерв"],
+    ]
+  .actions
+    = f.submit 'Сохранить'

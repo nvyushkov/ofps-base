@@ -1,0 +1,51 @@
+= form_for @ipv do |f|
+  - if @ipv.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@ipv.errors.count, "error")} prohibited this ipv from being saved:"
+      %ul
+        - @ipv.errors.full_messages.each do |msg|
+          %li= msg
+  = f.hidden_field :fire_id, value: @ipv.fire_id
+  .left
+  .right
+    .field
+      = f.label "От ац без установки на водоисточник"
+      = f.check_box :ac_not_water, class: "ippv_check"
+    .field
+      = f.label "ПГ с прокладкой"
+      = f.check_box :pg_magistral_line, class: "ippv_check"
+    .field
+      = f.label "ПВ с прокладкой"
+      = f.check_box :pv_magistral_line, class: "ippv_check"
+    .field
+      = f.label "Естественный вдоем с прокладкой"
+      = f.check_box :vodoem_magistral_line, class: "ippv_check"
+    .field
+      = f.label "ВНБ с прокладкой"
+      = f.check_box :vnb_magistral_line, class: "ippv_check"
+    .field
+      = f.label "От внутреннего пожарного водопровода"
+      = f.check_box :vnutr_vodoem, class: "ippv_check"
+    .field
+      = f.label "Методом перекачки от водоисточников"
+      = f.check_box :perekachka, class: "ippv_check"
+    .field
+      = f.label "ПГ подвозом"
+      = f.check_box :pg_podvoz, class: "ippv_check"
+    .field
+      = f.label "ПВ подвозом"
+      = f.check_box :pv_podvoz, class: "ippv_check"
+    .field
+      = f.label "Естественный водоем подвозом"
+      = f.check_box :vodoem_podvoz, class: "ippv_check"
+    .field
+      = f.label "ВНБ подвозом"
+      = f.check_box :vnb_podvoz, class: "ippv_check"
+    .field
+      = f.label "С использованием нескольких видов"
+      = f.check_box :neskolko, class: "ippv_check"
+    .field
+      = f.label "Потушено до прибытия"
+      = f.check_box :do_pribytia, class: "ippv_check"
+    .actions
+      = f.submit 'Сохранить'

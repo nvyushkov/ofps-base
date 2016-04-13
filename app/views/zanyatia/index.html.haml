@@ -1,0 +1,79 @@
+%h1
+  Занятия
+  %span#how_much
+  = link_to 'Сбросить фильтр', zanyatia_path, class: "new_record"
+  = link_to 'Новая запись', new_zanyatium_path, class: "new_record"
+  %span#notice= notice
+%table.stat
+  %thead
+    %tr
+      %th.date Дата
+      %th.msg_time Время
+      %th.address Адрес
+      %th.pch № ПЧ
+      %th.rukovoditel Руководитель
+      %th.zanyatiya Занятия
+      %th.hod Техника
+      %th.karaul Караул
+      %th.options Опции
+    %tr.filtres
+      %td
+        от
+        %input.datepicker
+        %br
+        до
+        %input.datepickerker_to
+      %td
+      %td
+        %input{:class => 'address_input'}
+      %td
+        %input{:class => 'pch_input'}
+      %td
+        %input{:class => 'rtp_input'}
+      %td
+        %select{:class => 'zanyatia_input'}
+          %option
+          %option Тренировки ЦУКС ЕДДС
+          %option ПСП ГДЗС
+          %option ПТхП
+          %option Спец. техника
+          %option ООТП и ПАСР
+          %option ТДК
+          %option ТК
+          %option Нормативы
+          %option ПТУ
+          %option Пров. боеготовность
+          %option Эвакуация
+      %td
+        %input{:class => 'tech_input'}
+      %td
+        %select{:class => 'karaul_input'}
+          %option
+          %option 1 караул
+          %option 2 караул
+          %option 3 караул
+          %option 4 караул
+      %td
+  %tbody
+    - @zanyatia.each do |zanyatium|
+      %tr.data
+        %td.date
+          = zanyatium.date.strftime("%d.%m.%y")
+        %td.msg_time
+          = zanyatium.msg_time.strftime("%k:%M")
+        %td.address
+          = zanyatium.address
+        %td.pch
+          = zanyatium.pch
+        %td.rtp
+          = zanyatium.rukovoditel
+        %td.zanyatiya
+          = zanyatium.zanyatiya
+        %td.technic
+          = zanyatium.hod
+        %td.karaul
+          = zanyatium.karaul
+        %td.options
+          = link_to 'Показать', zanyatium
+          = link_to 'Изменить', edit_zanyatium_path(zanyatium)
+%br

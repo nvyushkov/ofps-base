@@ -1,0 +1,81 @@
+%h1
+  Список прочих выездов
+  %span#how_much
+  = link_to 'Сбросить фильтр', prochies_path, class: "new_record"
+  = link_to 'Новая запись', new_prochy_path, class: "new_record"
+  %span#notice= notice
+%table.stat
+  %thead
+    %tr
+      %th.date Дата
+      %th.msg_time  Время сообщения
+      %th.address Адрес
+      %th.type_viezd Тип выезда
+      %th.sluzhby Службы
+      %th.description Описание
+      %th.karaul Караул
+      %th.options Опции
+    %tr.filtres
+      %td
+        от
+        %input.datepicker
+        %br
+        до
+        %input.datepickerker_to
+      %td
+      %td
+        %input{:class => 'address_input'}
+      %td
+        %select{:class => 'type_viezs_input'}
+          %option
+          %option Взаимодействие 02
+          %option Взаимодействие 03
+          %option Взаимодействие 04
+          %option Взаимодействие 072
+          %option Взаимодействие с дугими службами
+          %option Ночная проверка
+          %option КЗ
+          %option Подгорание пищи
+          %option Ложный СПС
+          %option Заправка АП
+          %option Заправка АЗС
+          %option ПМД
+          %option Терракт
+          %option Служебный
+          %option Газопроводы
+          %option Ложные
+          %option Потеряшки
+      %td
+        %input{:class => 'sluzhby_input'}
+      %td
+        %input{:class => 'description_input'}
+      %td
+        %select{:class => 'karaul_input'}
+          %option
+          %option 1 караул
+          %option 2 караул
+          %option 3 караул
+          %option 4 караул
+      %td
+  %tbody
+    - @prochies.each do |prochy|
+      %tr.data
+        %td.date
+          = prochy.date.strftime("%d.%m.%y")
+        %td.msg_time
+          = prochy.msg_time.strftime("%k:%M")
+        %td.address
+          = prochy.address
+        %td.type_viezd
+          = prochy.type_viezd
+        %td.sluzhby
+          = prochy.sluzhby
+        %td.description
+          = prochy.description
+        %td.karaul
+          = prochy.karaul
+        %td.options
+          = link_to 'Показать', prochy
+          = link_to 'Изменить', edit_prochy_path(prochy)
+
+%br

@@ -1,0 +1,53 @@
+= form_for @dtp do |f|
+  - if @dtp.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@dtp.errors.count, "error")} prohibited this dtp from being saved:"
+      %ul
+        - @dtp.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label "Дата:"
+    = f.date_select :date, class: "textbox"
+  .field
+    = f.label "Адрес:"
+    = f.text_field :address, class: "textbox"
+    %aside.annotice город/район н/п улица дом кв
+  .field
+    = f.label "Время сообщения:"
+    %span.timepicker
+      = f.time_select :msg_time, class: "textbox"
+  .field
+    = f.label "ПЧ:"
+    = f.text_field :pch, class: "textbox"
+  .field
+    = f.label "Описание:"
+    = f.text_field :opisanie, class: "textbox"
+  .field
+    = f.label "описание АСР:"
+    = f.text_field :asr_opisanie, class: "textbox"
+  .field
+    = f.label "Деблокированных:"
+    = f.text_field :deblockers, class: "textbox"
+  .field
+    = f.label "Спасенных:"
+    = f.text_field :saved_peoples, class: "textbox"
+  .field
+    = f.label "Пострадавших:"
+    = f.text_field :postradalo, class: "textbox"
+  .field
+    = f.label "Погибших:"
+    = f.text_field :pogiblo, class: "textbox"
+  .field
+    = f.label "Техника:"
+    = f.text_field :technic_pch, class: "textbox"
+  .field
+    = f.label "Караул:"
+    = f.select :karaul,
+    [["1 караул"],
+    ["2 караул"],
+    ["3 караул"],
+    ["4 караул"],
+    ["Резерв"],
+    ]
+  .actions
+    = f.submit 'Сохранить'

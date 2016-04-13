@@ -1,0 +1,25 @@
+%h1
+  РТП 16 ОФПС по РТ
+  = link_to 'Добавить РТП', new_rtp_path
+
+%table.stat
+  %thead
+    %tr.filtres
+      %th Имя
+      %th Фамилия
+      %th Отчество
+      %th Должность
+  %tbody
+    - @rtps.each do |rtp|
+      %tr.data
+        %td= rtp.family_name
+        %td= rtp.name
+        %td= rtp.otch_name
+        %td= rtp.dolzhnost
+        %td= link_to 'Показать', rtp
+        %td= link_to 'Изменить', edit_rtp_path(rtp)
+        %td= link_to 'Удалить', rtp, :method => :delete, :data => { :confirm => 'Уверен?!' }
+
+%br
+
+

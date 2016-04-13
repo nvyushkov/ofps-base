@@ -1,0 +1,20 @@
+%h1
+  Статистика ФГКУ "16 ОФПС по РТ"
+  = link_to 'Расширенная статистика',full_stat_index_path(:fire_daily => @fire_daily,
+    :dtp_daily => @dtp_daily,
+    :fire_wekly  =>  @fire_wekly,
+    :dtp_wekly  =>  @dtp_wekly,
+    :fires_city_count  =>  @fires_city_count,
+    :fire_city_daily => @fire_city_daily,
+    :fire_city_wekly => @fire_city_wekly,
+    :fires_raion_count =>  @fires_raion_count,
+    :fire_raion_daily =>  @fire_raion_daily,
+    :fire_raion_wekly =>  @fire_raion_wekly,
+    :fire_count  =>  @fire_count,
+    :dtp_count =>  @dtp_count,
+    :to_week_day => @to_week_day)
+= render  'tablemain'
+= render  'secndtable'
+%h1
+  Использование противопожарного водоснабжения
+= render  'ippv'

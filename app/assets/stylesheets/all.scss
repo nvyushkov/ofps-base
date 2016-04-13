@@ -1,0 +1,174 @@
+@font-face {
+  font-family: 'aleksandrac';
+  src: url('aleksandrac_regular.eot');
+  src: url('aleksandrac_regular.eot?#iefix') format('embedded-opentype'),
+  url('aleksandrac_regular.woff') format('woff'),
+  url('aleksandrac_regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+* {
+  transition: all 100ms linear;
+}
+.date > input.datepicker {display: none;}
+#how_much { font-size: 80%; color: #333333; margin-left: 2em; span { color: rgb(212,75,56)}}
+.actions input {
+  background: rgb(212,75,56);
+  color: #fff;
+  height: 28px;
+  width: 242px;
+  &:hover {
+    background: #ffffff;
+    border: 1px solid rgb(212,75,56);
+    color: rgb(212,75,56);
+    cursor: pointer;
+  }
+}
+
+div.stat {
+  a {
+    color: rgb(45, 114, 217);
+    font-size: 0.8em;
+    margin-left: 1em;
+  }
+}
+tr.main:hover {      background: rgb(45, 114, 217);
+    transition: all 50ms linear;color: #fff; cursor: pointer; .tr_name{text-align: center}}
+
+table.show_stat.main {
+  display: table;
+  margin: 0 auto;
+  .names{
+    text-align: left;
+    border-right: 1px solid rgba(110,110,120,0.1);
+    padding-left: 0.3em;
+  }
+  tr{
+    &:hover {
+      background: rgb(45, 114, 217);
+      transition: all 50ms linear;
+      color: #fff;
+      cursor: pointer;
+      -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.6);
+      -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.6);
+      box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.6);
+      .names {text-align: center;}
+      a{ color: yellow}
+    }
+  }
+}
+table.stat.fpsignal {
+  display: table;
+  margin: 0 auto !important;
+}
+table.stat {
+  font-size: 1.2em;
+  display: inline;
+  margin-left: -1em;
+  th {
+    height: 20px;
+    line-height: 20px;
+    padding: 3px;
+    color: rgb(212,75,56);
+  }
+  tr.data {
+    min-height: 30px;
+    line-height: 30px;
+    &:hover {
+      color: rgb(45, 114, 217);
+      transition: all 50ms linear !important;
+      cursor: pointer;
+      -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.6);
+      -moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.6);
+      box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.6);
+      a{ color: rgb(212,75,56);}
+    }
+    td {
+      height: inherit;
+      font-size: 0.75em;
+      text-align: center;
+      padding-top: 0.2em;
+      padding-bottom: 0.2em;
+      border-bottom: 1px solid rgba(110,110,120,0.5);
+      text-align: center;
+    }
+  }
+  th, td  {border-right: 1px solid rgba(110,110,120,0.1);}
+  th, td {
+    &:first-child {border-left: 2px solid rgba(110,110,120,0.1);}
+  }
+  .filtres {
+    height: 20px; line-height: 20px;
+    td { text-align: center ; padding-bottom:5px;border-bottom: 1px solid rgba(110,110,120,0.5);}
+    select { width: 100%;}
+  }
+  .tr_name,.names{
+    text-align: left;
+    border-right: 1px solid rgba(110,110,120,0.1);
+  }
+  input.datepicker, input.datepickerker_to { display: none }
+
+  .ui-datepicker-trigger {
+       position: relative;
+       top: 5px;
+       left: 5px;
+     }
+  .options{
+    font-weight: bold;
+    a {margin: 0 auto}
+  }
+  select, input {
+    border: 1px solid #CCC;
+    background: none;
+  }
+}
+
+aside.annotice {
+  position: absolute;
+  width: 450px;
+  margin-top: -1.5rem;
+  color: rgb(45, 114, 217);
+  font-size: 0.9em;
+  font-weight: 100;
+}
+.new_fire, .edit_fire   { .annotice {margin-left: 33rem;}}
+.new_dtp, .edit_dtp     { .annotice {margin-left: 27rem;}}
+
+
+/* weekly */
+ul#tabs-nav{
+  margin-top: -1em;
+  list-style: none;
+  padding: 0.4em;
+  -webkit-padding-start: 2em;
+  padding-left: 2em;
+}
+li {
+  display: inline-block;
+  margin-right: 0.3em;
+  line-height: 1.5em;
+  a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 1.3em;
+    user-select: none;
+    padding: .5rem 1rem;
+    outline: none;
+    background: #ffffff;
+    &:hover {
+      border-bottom: 0.3em double rgb(212,75,56);
+      border-top: 0.3em double rgb(212,75,56);
+      color: rgb(212,75,56);
+      text-decoration: none;
+      -webkit-box-shadow: 0px 0px 8px 0px rgba(255,255,255,0.6);
+      -moz-box-shadow: 0px 0px 8px 0px #ffffff;
+      box-shadow: 0px 0px 8px 0px #ffffff;
+    }
+    &:active{
+      border-bottom: 5px double rgb(45, 114, 217);
+      border-top: 5px double rgb(45, 114, 217);
+      color: rgb(45, 114, 217)
+    }
+  }
+}

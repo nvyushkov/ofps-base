@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>База ФГКУ "16ОФПС по РТ"></title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="<%= controller.controller_name %>">
+<header>
+  <menu>
+    <ul>
+      <li>
+        <%= link_to 'Главная', root_path %>
+      </li>
+      <li>
+        <%= link_to 'Пожары', fires_path %>
+      </li>
+      <li>
+        <%= link_to 'Дтп', dtps_path %>
+      </li>
+      <li>
+        <%= link_to 'Прочие' , prochies_path %>
+      </li>
+      <li>
+        <%= link_to 'Планы карточки', ptpktps_path %>
+      </li>
+      <li>
+        <%= link_to 'Загорания', vozgoranies_path %>
+      </li>
+      <li>
+        <%= link_to 'Занятия',  zanyatia_path %>
+      </li>
+      <li>
+        <%= link_to 'ЕДДС', eddscards_path %>
+      </li>
+      <li>
+        <%= link_to 'ЕДДС прочие', edds_prochies_path %>
+      </li>
+      <li>
+        <%= link_to 'Сигналы', fpsignals_path %>
+      </li>
+    </ul>
+  </menu>
+</header>
+<div class="stat">
+  <%= yield %>
+</div>
+<script src="/assets/application.js"></script>
+</body>
+</html>

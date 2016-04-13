@@ -1,0 +1,43 @@
+= form_for @edds_prochy do |f|
+  - if @edds_prochy.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@edds_prochy.errors.count, "error")} prohibited this edds_prochy from being saved:"
+      %ul
+        - @edds_prochy.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label "Дата:"
+    = f.date_select :date, class: "textbox"
+  .field
+    = f.label "Адрес:"
+    = f.text_field :address, class: "textbox"
+  .field
+    = f.label "Время сообщения:"
+    %span.timepicker
+      = f.time_select :msg_time, class: "textbox"
+  .field
+    = f.label "Время окончания:"
+    %span.timepicker
+      = f.time_select :end_time, class: "textbox"
+  .field
+    = f.label "Тип выезда"
+    = f.select :type_viezd,
+        [["Терракт"],
+        ["Отключение воды"],
+        ["Отключение электр."],
+        ["Отключение отопл."],
+        ["Газопроводы"],
+        ["Открытая вода"],
+        ["Метеоявления"],
+        ["Экология"],
+        ["Потеряшки"],
+        ["Продуктопроводы"],
+        ]
+  .field
+    = f.label "Службы"
+    = f.text_field :sluzhby
+  .field
+    = f.label "Описание"
+    = f.text_field :description
+  .actions
+    = f.submit 'Сохранить'

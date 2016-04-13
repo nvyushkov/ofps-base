@@ -1,0 +1,168 @@
+%h1
+  За неделю
+  %span#how_much
+  = link_to "На главную", root_path
+%article
+  %ul#tabs-nav
+    %li
+      %a{:href=>"#fires"} Пожары
+    %li
+      %a{:href=>"#dtp"} ДТП
+    %li
+      %a{:href=>"#ptpktp"} Планы/карточки
+    %li
+      %a{:href=>"#zagor"} Загорания
+    %li
+      %a{:href=>"#vz02"} Взаим-е 02
+    %li
+      %a{:href=>"#vz0304"} Взаим-е 03/4
+    %li
+      %a{:href=>"#vz072"} Взаим-е 072
+    %li
+      %a{:href=>"#lozhn"} Ложные
+    %li
+      %a{:href=>"#zagor"} Загорания
+    %li
+      %a{:href=>"#zanyat"} Занятия
+  #tabs
+    #fires
+      %table.daily_stat.main
+        %thead
+          %tr.filtres
+            %th Дата
+            %th Время
+            %th Адрес
+            %th Опции
+        %tbody
+          - @fire_wekly1.each do |fires|
+            %tr
+              %td= fires.date.strftime("%d.%m.%y")
+              %td= fires.msg_time.strftime("%k:%M")
+              %td= fires.address
+              %td= link_to 'Подробнее', fires
+    #dtp
+      %table.daily_stat.main
+        %thead
+          %tr.filtres
+            %th Дата
+            %th Время
+            %th Адрес
+            %th Опции
+        %tbody
+          - @dtp_wekly1.each do |dtp|
+            %tr
+              %td= dtp.date.strftime("%d.%m.%y")
+              %td= dtp.msg_time.strftime("%k:%M")
+              %td= dtp.address
+              %td= link_to 'Подробнее', dtp
+    #ptpktp
+      %table.daily_stat.main
+        %thead
+          %tr.filtres
+            %th Дата
+            %th Время
+            %th Адрес
+            %th Опции
+        %tbody
+          - @ptpktp_wekly1.each do |ptpktp|
+            %tr
+              %td= ptpktp.date.strftime("%d.%m.%y")
+              %td= ptpktp.msg_time.strftime("%k:%M")
+              %td= ptpktp.address
+              %td= link_to 'Подробнее', ptpktp
+    #vz02
+      %table.daily_stat.main
+        %thead
+          %tr.filtres
+            %th Дата
+            %th Время
+            %th Адрес
+            %th Опции
+        %tbody
+          - @vz02_wekly1.each do |vz02|
+            %tr
+              %td= vz02.date.strftime("%d.%m.%y")
+              %td= vz02.msg_time.strftime("%k:%M")
+              %td= vz02.address
+              %td= link_to 'Подробнее', vz02
+    #vz0304
+      %table.daily_stat.main
+        %thead
+          %tr.filtres
+            %th Дата
+            %th Время
+            %th Адрес
+            %th Опции
+        %tbody
+          - @vz04_wekly1.each do |vz04|
+            %tr
+              %td= vz04.date.strftime("%d.%m.%y")
+              %td= vz04.msg_time.strftime("%k:%M")
+              %td= vz04.address
+              %td= link_to 'Подробнее', vz04
+          - @vz03_wekly1.each do |vz03|
+            %tr
+              %td= vz03.date.strftime("%d.%m.%y")
+              %td= vz03.msg_time.strftime("%k:%M")
+              %td= vz03.address
+              %td= link_to 'Подробнее', vz03
+    #vz072
+      %table.daily_stat.main
+        %thead
+          %tr.filtres
+            %th Дата
+            %th Время
+            %th Адрес
+            %th Опции
+        %tbody
+          - @vz02_wekly1.each do |vz072|
+            %tr
+              %td= vz072.date.strftime("%d.%m.%y")
+              %td= vz072.msg_time.strftime("%k:%M")
+              %td= vz072.address
+              %td= link_to 'Подробнее', vz072
+    #lozhn
+      %table.daily_stat.main
+        %thead
+          %tr.filtres
+            %th Дата
+            %th Время
+            %th Адрес
+            %th Опции
+        %tbody
+          - @lozhn_wekly1.each do |lozhn|
+            %tr
+              %td= lozhn.date.strftime("%d.%m.%y")
+              %td= lozhn.msg_time.strftime("%k:%M")
+              %td= lozhn.address
+              %td= link_to 'Подробнее', lozhn
+    #zagor
+      %table.daily_stat.main
+        %thead
+          %tr.filtres
+            %th Дата
+            %th Время
+            %th Адрес
+            %th Опции
+        %tbody
+          - @vozgor_wekly1.each do |voz|
+            %tr
+              %td= voz.date.strftime("%d.%m.%y")
+              %td= voz.msg_time.strftime("%k:%M")
+              %td= voz.address
+              %td= link_to 'Подробнее', voz
+    #zanyat
+      %table.daily_stat.main
+        %thead
+          %tr.filtres
+            %th Дата
+            %th Время
+            %th Адрес
+            %th Опции
+        %tbody
+          - @zanyatia_wekly1.each do |zanyat|
+            %tr
+              %td= zanyat.date.strftime("%d.%m.%y")
+              %td= zanyat.msg_time.strftime("%k:%M")
+              %td= zanyat.address
+              %td= link_to 'Подробнее', zanyat

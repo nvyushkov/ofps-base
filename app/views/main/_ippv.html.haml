@@ -1,0 +1,108 @@
+.ippv
+  .top1
+    C прокладкой магистральной линии
+    %br
+    от АЦ(МП) установленной на:
+  .top2
+    Методом подвоза воды пожарной техникой
+    %br
+    с забором воды АЦ(МП) от:
+  .thead
+    .th
+      .degreeНаименование муниципального образования
+    .th
+      .degreeКоличество пожаров в районе
+    .th
+      .degreeПотушено подразделениями ПО
+    .th
+      .degree
+        От АЦ без установки
+        %br
+        на водоисточник
+    .th
+      .degreeПГ
+    .th
+      .degreeПВ
+    .th
+      .degreeЕстесственный водоем
+    .th
+      .degreeВНБ
+    .th
+      .degree
+        От внутреннего пожарного
+        %br
+        водоема
+    .th
+      .degree
+        Методом перекачки от водоисточников, расположенных на расстоянии более 500 метров
+    .th
+      .degreeПГ
+    .th
+      .degreeПВ
+    .th
+      .degreeЕстесственный водоем
+    .th
+      .degreeВНБ
+    .th
+      .degree
+        С использованием нескольких
+        %br
+        видов водоисточников
+    .th
+      .degree
+        Потушено до прибытия
+        %br
+        подразделений ПО
+  .tbody
+    .tr.second
+      .td Город
+      .td #{@fires_city_count}
+      .td #{@fires_city_count-@do_pribytia_city}
+      .td #{@ac_not_water_city}
+      .td #{@pg_magistral_city}
+      .td #{@pv_magistral_city}
+      .td #{@vodoem_magistral_city}
+      .td #{@vnb_magistral_city}
+      .td #{@vnutr_vodoem_city}
+      .td #{@perekachka_city}
+      .td #{@pg_podvoz_city}
+      .td #{@pv_podvoz_city}
+      .td #{@vodoem_podvoz_city}
+      .td #{@vnb_podvoz_city}
+      .td #{@neskolko_city}
+      .td #{@do_pribytia_city}
+    .tr.second
+      .td Район
+      .td #{@fires_raion_count}
+      .td #{@fires_raion_count-@do_pribytia_raion}
+      .td #{@ac_not_water_raion}
+      .td #{@pg_magistral_raion}
+      .td #{@pv_magistral_raion}
+      .td #{@vodoem_magistral_raion}
+      .td #{@vnb_magistral_raion}
+      .td #{@vnutr_vodoem_raion}
+      .td #{@perekachka_raion}
+      .td #{@pg_podvoz_raion}
+      .td #{@pv_podvoz_raion}
+      .td #{@vodoem_podvoz_raion}
+      .td #{@vnb_podvoz_raion}
+      .td #{@neskolko_raion}
+      .td #{@do_pribytia_raion}
+    .tr.thrd
+      .td
+        %strong ИТОГО:
+      .td #{@fires_raion_count + @fires_city_count}
+      .td #{@fires_city_count + @fires_raion_count - @do_pribytia}
+      .td #{@ac_not_water}
+      .td #{@pg_magistral_line}
+      .td #{@pv_magistral_line}
+      .td #{@vodoem_magistral_line}
+      .td #{@vnb_magistral_line}
+      .td #{@vnutr_vodoem}
+      .td #{@perekachka}
+      .td #{@pg_podvoz}
+      .td #{@pv_podvoz}
+      .td #{@vodoem_podvoz}
+      .td #{@vnb_podvoz}
+      .td #{@neskolko}
+      .td #{@do_pribytia}

@@ -1,0 +1,43 @@
+= form_for @fpsignal do |f|
+  - if @fpsignal.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@fpsignal.errors.count, "error")} prohibited this fpsignal from being saved:"
+      %ul
+        - @fpsignal.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label "Дата:"
+    = f.date_select :date, class: "textbox"
+  .field
+    = f.label "Тип сигнала:"
+    = f.select :type_signal,
+      [["Техническая проверка Казань"],
+      ["Сигналы по тренировке"],
+      ["ГО"],
+      ["ФСБ"],
+      ["МВД"],
+      ["Здравохранение"],
+      ["СЗО"],
+      ["ПОО"],
+      ]
+  .field
+    = f.label "Время сообщения:"
+    %span.timepicker
+      = f.time_select :msg_time, class: "textbox"
+  .field
+    = f.label "Техника:"
+    = f.text_field :technic, class: "textbox"
+  .field
+    = f.label "Описание:"
+    = f.text_field :description, class: "textbox"
+  .field
+    = f.label "Караул:"
+    = f.select :karaul,
+    [["1 караул"],
+    ["2 караул"],
+    ["3 караул"],
+    ["4 караул"],
+    ["Резерв"],
+    ]
+  .actions
+    = f.submit 'Сохранить'

@@ -1,0 +1,67 @@
+%table.main
+  %thead
+    %th
+      Наименование
+    %th
+      За сутки
+      %br
+      %small
+        (#{(@today-1).strftime("%d.%m 08:30")} - #{(@today).strftime("%d.%m 08:30")})
+    %th
+      За неделю
+      %br
+      %small
+        (#{(@today).strftime("%d.%m")} - #{(@to_week_day).strftime("%d.%m")})
+    %th
+      Всего
+  %tbody
+    %tr.main
+      %td.tr_name Выездов по тревоге
+      %td #{@trevoga_daily}
+      %td #{@trevoga_wekly}
+      %td #{@trevoga_count}
+    %tr.main
+      %td.tr_name Взаим-е 02
+      %td #{@vz02_daily}
+      %td #{@vz02_wekly}
+      %td #{@count_vzaimod02_all}
+    %tr.main
+      %td.tr_name Взаим-е 03
+      %td #{@vz03_daily}
+      %td #{@vz03_wekly}
+      %td #{@count_vzaimod03_all}
+    %tr.main
+      %td.tr_name Взаим-е 04
+      %td #{@vz04_daily}
+      %td #{@vz04_wekly}
+      %td #{@count_vzaimod04_all}
+    %tr.main
+      %td.tr_name Взаим-е 072
+      %td #{@vz072_daily}
+      %td #{@vz072_wekly}
+      %td #{@count_vzaimod072_all}
+    %tr.main
+      %td.tr_name Взаим-я общее
+      %td #{@count_vzaimod_daily}
+      %td #{@count_vzaimod_weekly}
+      %td #{@count_vzaimod_all}
+    %tr.main
+      %td.tr_name Подг. пищи
+      %td #{@podgor_daily}
+      %td #{@podgor_wekly}
+      %td #{@count_podg_pish}
+    %tr.main
+      %td.tr_name Прочих ЕДДС
+      %td #{@edsproch_daily}
+      %td #{@edsproch_wekly}
+      %td #{@edds_proch}
+    %tr.main
+      %td.tr_name Отключений воды
+      %td #{@water_daily}
+      %td #{@water_wekly}
+      %td #{@water_count}
+    %tr.main
+      %td.tr_name Отключений электр.
+      %td #{@electr_daily}
+      %td #{@electr_wekly}
+      %td #{@electr_count}

@@ -1,0 +1,44 @@
+%h1
+  Карточка ГЛОНАСС+112
+  = @eddscard.date.strftime("%d.%m.%y")
+  = link_to 'Изменить', edit_eddscard_path(@eddscard)
+  = link_to 'К списку карточек', eddscards_path
+  = link_to 'Удалить', @eddscard, :method => :delete
+%table.show_stat.main
+  %tr
+    %td.names
+      Дата
+    %td
+      = @eddscard.date.strftime("%d.%m.%y")
+  %tr
+    %td.names
+      Время сообщения
+    %td
+      = @eddscard.msg_time.strftime("%k:%M")
+  %tr
+    %td.names
+      Ф.И.О.
+      %small
+        (заявитель)
+    %td
+      = @eddscard.fio
+  %tr
+    %td.names
+      Адрес
+    %td
+      = @eddscard.address
+  %tr
+    %td.names
+      Службы
+    %td
+      = @eddscard.sluzhby
+  %tr
+    %td.names
+      Описание
+    %td
+      = @eddscard.description
+  %tr
+    %td.names
+      Телефон
+    %td
+      = @eddscard.tel

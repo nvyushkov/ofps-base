@@ -1,0 +1,60 @@
+%h1
+  Сигналы
+  %span#how_much
+  = link_to 'Сбросить фильтр', fpsignals_path, class: "new_record"
+  = link_to 'Новая запись', new_fpsignal_path, class: "new_record"
+  %span#notice= notice
+%table.stat.fpsignal
+  %thead
+    %tr
+      %th.date Дата
+      %th.msg_time Время
+      %th.type_signal Тип сигнала
+      %th.technic Техника
+      %th.description Описание
+      %th.karaul Караул
+      %th.options Опции
+    %tr
+      %td
+        %input.datepicker
+      %td
+      %td
+        %select{:class => 'type_signal_input'}
+          %option
+          %option Техническая проверка Казань
+          %option Сигналы по тренировке
+          %option ГО
+          %option ФСБ
+          %option МВД
+          %option Здравоохранение
+          %option СЗО
+          %option ПОО
+      %td
+      %td
+      %td
+        %select{:class => 'karaul_input'}
+          %option
+          %option 1 караул
+          %option 2 караул
+          %option 3 караул
+          %option 4 караул
+      %td
+  %tbody
+    - @fpsignals.each do |fpsignal|
+      %tr.data
+        %td.date
+          = fpsignal.date.strftime("%d.%m.%y")
+        %td.msg_time
+          = fpsignal.msg_time.strftime("%k:%M")
+        %td.type_signal
+          = fpsignal.type_signal
+        %td.technic
+          = fpsignal.technic
+        %td.description
+          = fpsignal.description
+        %td.karaul
+          = fpsignal.karaul
+        %td.options
+          = link_to 'Показать', fpsignal
+          = link_to 'Изменить', edit_fpsignal_path(fpsignal)
+%br

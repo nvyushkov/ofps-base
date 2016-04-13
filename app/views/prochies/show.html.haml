@@ -1,0 +1,42 @@
+%h1
+  Подробности о выезде
+  = @prochy.date.strftime("%d.%m.%y")
+  = link_to 'Изменить', edit_dtp_path(@prochy)
+  = link_to 'К списку прочих ваыездов', prochies_path
+  = link_to 'Удалить', @prochy, :method => :delete
+%table.show_stat.main
+  %tr
+    %td.names
+      Дата
+    %td
+      = @prochy.date.strftime("%d.%m.%y")
+  %tr
+    %td.names
+      Время сообщения
+    %td
+      = @prochy.msg_time.strftime("%k:%M")
+  %tr
+    %td.names
+      Адрес
+    %td
+      = @prochy.address
+  %tr
+    %td.names
+      Тип выезда
+    %td
+      = @prochy.type_viezd
+  %tr
+    %td.names
+      Службы
+    %td
+      = @prochy.sluzhby
+  %tr
+    %td.names
+      Описание
+    %td
+      = @prochy.description
+  %tr
+    %td.names
+      Караул
+    %td
+      = @prochy.karaul

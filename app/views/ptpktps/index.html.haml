@@ -1,0 +1,64 @@
+%h1
+  Планы/карточки
+  %span#how_much
+  = link_to 'Сбросить фильтр', ptpktps_path, class: "new_record"
+  = link_to 'Новая запись', new_ptpktp_path, class: "new_record"
+  %span#notice= notice
+%table.stat
+  %thead
+    %tr
+      %th.date Дата
+      %th.msg_time Вр. сообщ.
+      %th.address Адрес
+      %th.pch № ПЧ
+      %th.plan_cart План/карточка
+      %th.numberptpktp № План/Карт
+      %th.hod  Техника
+      %th.karaul Караул
+      %th.options Опции
+    %tr.filtres
+      %td
+        от
+        %input.datepicker
+        %br
+        до
+        %input.datepickerker_to
+      %td
+      %td
+        %input{:class => 'address_input'}
+      %td
+        %input{:class => 'pch_input'}
+      %td
+      %td
+      %td
+      %td
+        %select{:class => 'karaul_input'}
+          %option
+          %option 1 караул
+          %option 2 караул
+          %option 3 караул
+          %option 4 караул
+      %td
+  %tbody
+    - @ptpktps.each do |ptpktp|
+      %tr.data
+        %td.date
+          = ptpktp.date.strftime("%d.%m.%y")
+        %td.msg_time
+          = ptpktp.msg_time.strftime("%k:%M")
+        %td.address
+          = ptpktp.address
+        %td.pch
+          = ptpktp.pch
+        %td.plan_cart
+          = ptpktp.plan_cart
+        %td.numberptpktp
+          = ptpktp.numberptpktp
+        %td.hod
+          = ptpktp.hod
+        %td.karaul
+          = ptpktp.karaul
+        %td.options
+          = link_to 'Показать', ptpktp
+          = link_to 'Изменить', edit_ptpktp_path(ptpktp)
+%br

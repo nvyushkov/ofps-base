@@ -1,0 +1,32 @@
+= form_for @rtp do |f|
+  - if @rtp.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@rtp.errors.count, "error")} prohibited this rtp from being saved:"
+      %ul
+        - @rtp.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label "Фамилия:"
+    = f.text_field :family_name, class: "textbox"
+  .field
+    = f.label "Имя:"
+    = f.text_field :name, class: "textbox"
+  .field
+    = f.label "Отчество:"
+    = f.text_field :otch_name, class: "textbox"
+  .field
+    = f.label "Должность:"
+    = f.select :dolzhnost,
+      [["НО"],
+      ["ЗНО"],
+      ["Нач. части"],
+      ["Зам нач. части"],
+      ["СПТ"],
+      ["НК"],
+      ["ПНК"],
+      ["ППС РТ"],
+      ["Начальник МПО"],
+      ["ДПК"],
+      ]
+  .actions
+    = f.submit 'Сохранить'

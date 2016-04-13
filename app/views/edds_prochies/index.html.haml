@@ -1,0 +1,57 @@
+%h1
+  Реагирование ЕДДС
+  %span#how_much
+  = link_to 'Сбросить фильтр', edds_prochies_path, class: "new_record"
+  = link_to 'Новая запись', new_edds_prochy_path, class: "new_record"
+  %span#notice= notice
+%table.stat
+  %thead
+    %tr
+      %th.date Дата
+      %th.msg_time  Время
+      %th.msg_time  Окончание
+      %th.address Адрес
+      %th.type_viezd Тип выезда
+      %th.sluzhby Службы
+      %th.description  Описание
+      %th.options Опции
+    %tr.filtres
+      %td
+        %input.datepicker
+      %td
+      %td
+        %input{:class => 'address_input'}
+      %td
+        %select{:class => 'type_viezs_input'}
+          %option
+          %option Терракт
+          %option Отключение воды
+          %option Отключение электр.
+          %option Газопроводы
+          %option Открытая вода
+          %option Метеоявления
+      %td
+        %input{:class => 'sluzhby_input'}
+      %td
+      %td
+  %tbody
+    - @edds_prochies.each do |edds_prochy|
+      %tr.data
+        %td.date
+          = edds_prochy.date.strftime("%d.%m.%y")
+        %td.msg_time
+          = edds_prochy.msg_time.strftime("%k:%M")
+        %td.end_time
+          = edds_prochy.end_time.strftime("%k:%M")
+        %td.address
+          = edds_prochy.address
+        %td.type_viezd
+          = edds_prochy.type_viezd
+        %td.sluzhby
+          = edds_prochy.sluzhby
+        %td.description
+          = edds_prochy.description
+        %td.options
+          = link_to 'Показать', edds_prochy
+          = link_to 'Изменить', edit_edds_prochy_path(edds_prochy)
+%br

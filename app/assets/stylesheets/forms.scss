@@ -1,0 +1,74 @@
+.new_fire, .edit_fire, .new_ipv, .edit_ipv {
+  position: relative;
+  width: 500px;
+  color: #000000;
+  font-family: "Helvetica Neue", "Arial", sans-serif;
+  font-size: 12pt;
+  font-weight: 700;
+  margin-bottom: 100px;
+  .datepicker, input, select { float: right}
+  .field *{ height: 24px; line-height: 24px;}
+  input, select { border: 1px solid #ccc}
+  input { width: 240px;}
+  #fire_object { width: 242px; height: 28px;}
+  select { background-color: #ffffff;}
+  span.timepicker {
+    *{float: none;}
+    float: right;
+  }
+}
+.new_ipv, .edit_ipv {
+  width: 610px;
+}
+.ipv_show {
+  position: absolute;
+  top: 5rem;
+  left: 40px;
+  .ipv {
+    margin-left: 1rem;
+  }
+}
+.new_eddscard, .edit_eddscard,.new_edds_prochie, .edit_edds_prochie,.new_ptpktp, .edit_ptpktp,.new_vozgoranie, .edit_vozgoranie {
+  position: relative;
+  width: 410px;
+  color: #000000;
+  font-family: "Helvetica Neue", "Arial", sans-serif;
+  font-size: 12pt;
+  font-weight: 700;
+  margin-bottom: 100px;
+  .datepicker, input, select { float: right}
+  .field *{ height: 24px; line-height: 24px;}
+  input, select { border: 1px solid #ccc}
+  input { width: 240px;}
+  select { background-color: #ffffff;}
+  span.timepicker {
+    *{float: none;}
+    float: right;
+  }
+}
+.new_vozgoranie, .edit_vozgoranie {#vozgoranie_object { width: 242px; height: 28px;}}
+.new_fpsignal, .edit_fpsignal,.new_prochie, .edit_prochie,.new_zanyatium, .edit_zanyatium, .new_rtp, .edit_rtp {
+  position: relative;
+  width: 390px;
+  color: #000000;
+  font-family: "Helvetica Neue", "Arial", sans-serif;
+  font-size: 12pt;
+  font-weight: 700;
+  margin-bottom: 100px;
+  .datepicker, input, select { float: right}
+  .field *{ height: 24px; line-height: 24px;}
+  input, select { border: 1px solid #ccc}
+  input { width: 240px;}
+  select { background-color: #ffffff;}
+  span.timepicker {
+    *{float: none;}
+    float: right;
+  }
+}
+
+/* Validate */
+.error {color: red;}
+.correct {color: green; font-weight: 700;}
+input.disabled { background: transparent !important; color: #cccccc !important;
+  &:hover {border: 1px solid #cccccc; cursor: default;}
+}

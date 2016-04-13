@@ -1,0 +1,2 @@
+module FullStatHelper
+end

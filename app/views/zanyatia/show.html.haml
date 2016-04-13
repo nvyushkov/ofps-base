@@ -1,0 +1,42 @@
+%h1
+  Подробности о Занятии
+  = @zanyatium.date.strftime("%d.%m.%y")
+  = link_to 'Изменить', edit_zanyatium_path(@zanyatium)
+  = link_to 'К списку занятий', zanyatia_path
+  = link_to 'Удалить', @zanyatium, :method => :delete
+%table.show_stat.main
+  %tr
+    %td.names
+      Дата
+    %td
+      = @zanyatium.date.strftime("%d.%m.%y")
+  %tr
+    %td.names
+      Время сообщения
+    %td
+      = @zanyatium.msg_time.strftime("%k:%M")
+  %tr
+    %td.names
+      Адрес
+    %td
+      = @zanyatium.address
+  %tr
+    %td.names
+      № ПЧ
+    %td
+      = @zanyatium.pch
+  %tr
+    %td.names
+      Руководитель
+    %td
+      = @zanyatium.rukovoditel
+  %tr
+    %td.names
+      Занятия
+    %td
+      = @zanyatium.zanyatiya
+  %tr
+    %td.names
+      Караул
+    %td
+      = @zanyatium.karaul

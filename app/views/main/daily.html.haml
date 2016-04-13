@@ -1,0 +1,145 @@
+%h1
+  Список выездов за сутки
+  %span#how_much
+  = link_to "На главную", root_path
+%article
+  %table.daily_stat.main
+    %thead
+      %tr.filtres
+        %th Дата
+        %th Время
+        %th Адрес
+        %th Тип выезда
+    %tbody
+      - @fire.each do |пожар|
+        %tr.data
+          %td= пожар.date.strftime("%d.%m.%y")
+          %td= пожар.msg_time.strftime("%k:%M")
+          %td= пожар.address
+          %td Пожар
+      - @dtp.each do |дтп|
+        %tr.data
+          %td= дтп.date.strftime("%d.%m.%y")
+          %td= дтп.msg_time.strftime("%k:%M")
+          %td= дтп.address
+          %td ДТП
+      - @lozhn.each do |ложный|
+        %tr.data
+          %td= ложный.date.strftime("%d.%m.%y")
+          %td= ложный.msg_time.strftime("%k:%M")
+          %td= ложный.address
+          %td Ложный
+      - @ptpktp.each do |птпктп|
+        %tr.data
+          %td= птпктп.date.strftime("%d.%m.%y")
+          %td= птпктп.msg_time.strftime("%k:%M")
+          %td= птпктп.address
+          %td Планы/карт
+      - @vozgor.each do |загорания|
+        %tr.data
+          %td= загорания.date.strftime("%d.%m.%y")
+          %td= загорания.msg_time.strftime("%k:%M")
+          %td= загорания.address
+          %td Загорания
+      - @proch_v02.each do |взаимодействие02|
+        %tr.data
+          %td= взаимодействие02.date.strftime("%d.%m.%y")
+          %td= взаимодействие02.msg_time.strftime("%k:%M")
+          %td= взаимодействие02.address
+          %td Взаимодействие 02
+      - @proch_v03.each do |взаимодействие03|
+        %tr.data
+          %td= взаимодействие03.date.strftime("%d.%m.%y")
+          %td= взаимодействие03.msg_time.strftime("%k:%M")
+          %td= взаимодействие03.address
+          %td Взаимодействие 03
+      - @proch_v04.each do |взаимодействие04|
+        %tr.data
+          %td= взаимодействие04.date.strftime("%d.%m.%y")
+          %td= взаимодействие04.msg_time.strftime("%k:%M")
+          %td= взаимодействие04.address
+          %td Взаимодействие04
+      - @proch_v072.each do |взаимодействие072|
+        %tr.data
+          %td= взаимодействие072.date.strftime("%d.%m.%y")
+          %td= взаимодействие072.msg_time.strftime("%k:%M")
+          %td= взаимодействие072.address
+          %td Взаимодействие072
+      - @proch_vdr.each do |взаимодействиядругие|
+        %tr.data
+          %td= взаимодействиядругие.date.strftime("%d.%m.%y")
+          %td= взаимодействиядругие.msg_time.strftime("%k:%M")
+          %td= взаимодействиядругие.address
+          %td Взаимодействия с др.
+      - @proch_kz.each do |кз|
+        %tr.data
+          %td= кз.date.strftime("%d.%m.%y")
+          %td= кз.msg_time.strftime("%k:%M")
+          %td= кз.address
+          %td КЗ
+      - @proch_podpish.each do |подгпищи|
+        %tr.data
+          %td= подгпищи.date.strftime("%d.%m.%y")
+          %td= подгпищи.msg_time.strftime("%k:%M")
+          %td= подгпищи.address
+          %td Подгорание пищи
+      - @proch_lsps.each do |ложспс|
+        %tr.data
+          %td= ложспс.date.strftime("%d.%m.%y")
+          %td= ложспс.msg_time.strftime("%k:%M")
+          %td= ложспс.address
+          %td Ложный СПС
+      - @proch_zap.each do |заправкаап|
+        %tr.data
+          %td= заправкаап.date.strftime("%d.%m.%y")
+          %td= заправкаап.msg_time.strftime("%k:%M")
+          %td= заправкаап.address
+          %td Заправка АП
+      - @proch_zazs.each do |заправкаазс|
+        %tr.data
+          %td= заправкаазс.date.strftime("%d.%m.%y")
+          %td= заправкаазс.msg_time.strftime("%k:%M")
+          %td= заправкаазс.address
+          %td Заправка АЗС
+      - @proch_pmd.each do |пмд|
+        %tr.data
+          %td= пмд.date.strftime("%d.%m.%y")
+          %td= пмд.msg_time.strftime("%k:%M")
+          %td= пмд.address
+          %td ПМД
+      - @proch_terract.each do |терракт|
+        %tr.data
+          %td= терракт.date.strftime("%d.%m.%y")
+          %td= терракт.msg_time.strftime("%k:%M")
+          %td= терракт.address
+          %td Терракт
+      - @proch_sluzheb.each do |служебный|
+        %tr.data
+          %td= служебный.date.strftime("%d.%m.%y")
+          %td= служебный.msg_time.strftime("%k:%M")
+          %td= служебный.address
+          %td Служебный
+      - @proch_gszopr.each do |газопроводы|
+        %tr.data
+          %td= газопроводы.date.strftime("%d.%m.%y")
+          %td= газопроводы.msg_time.strftime("%k:%M")
+          %td= газопроводы.address
+          %td Газопроводы
+      - @zanyatia.each do |занятия|
+        %tr.data
+          %td= занятия.date.strftime("%d.%m.%y")
+          %td= занятия.msg_time.strftime("%k:%M")
+          %td= занятия.address
+          %td Занятия
+      - @proch_poter.each do |потеряшки|
+        %tr.data
+          %td= потеряшки.date.strftime("%d.%m.%y")
+          %td= потеряшки.msg_time.strftime("%k:%M")
+          %td= потеряшки.address
+          %td Потеряшки
+      - @proch_meteo.each do |метеоявления|
+        %tr.data
+          %td= метеоявления.date.strftime("%d.%m.%y")
+          %td= метеоявления.msg_time.strftime("%k:%M")
+          %td= метеоявления.address
+          %td Метеоявления

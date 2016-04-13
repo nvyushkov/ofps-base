@@ -1,0 +1,62 @@
+%h1
+  Подробности о ДТП
+  = @dtp.date.strftime("%d.%m.%y")
+  = link_to 'Изменить', edit_dtp_path(@dtp)
+  = link_to 'К списку дтп', dtps_path
+  = link_to 'Удалить', @dtp, :method => :delete
+%table.show_stat.main
+  %tr
+    %td.names
+      Дата
+    %td
+      = @dtp.date.strftime("%d.%m.%y")
+  %tr
+    %td.names
+      Время сообщения
+    %td
+      = @dtp.msg_time.strftime("%k:%M")
+  %tr
+    %td.names
+      ПЧ
+    %td
+      = @dtp.pch
+  %tr
+    %td.names
+      Описание
+    %td
+      = @dtp.opisanie
+  %tr
+    %td.names
+      описание АСР
+    %td
+      = @dtp.asr_opisanie
+  %tr
+    %td.names
+      Деблокированных
+    %td
+      = @dtp.deblockers
+  %tr
+    %td.names
+      Спасенных
+    %td
+      = @dtp.saved_peoples
+  %tr
+    %td.names
+      Пострадавших
+    %td
+      = @dtp.postradalo
+  %tr
+    %td.names
+      Погибших
+    %td
+      = @dtp.pogiblo
+  %tr
+    %td.names
+      Техника
+    %td
+      = @dtp.technic_pch
+  %tr
+    %td.names
+      Караул
+    %td
+      = @dtp.karaul

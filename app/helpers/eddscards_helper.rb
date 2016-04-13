@@ -1,0 +1,2 @@
+module EddscardsHelper
+end

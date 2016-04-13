@@ -1,0 +1,186 @@
+menu, ul, dir {
+  -webkit-margin-before:  0em;
+  -webkit-margin-after:   0em;
+  -webkit-margin-start:   0px;
+  -webkit-margin-end:     0px;
+  -webkit-padding-start:  0px;
+}
+
+menu {
+  ul {
+    list-style: none;
+    min-height: 2.5em;
+    height: auto;
+    max-height: 6em;
+    background: rgb(212,75,56);
+    padding: 0.8em;
+    -webkit-padding-start: 4em;
+    padding-left: 4em;
+  }
+  li {
+    display: inline-block;
+    margin-right: 0.3em;
+    line-height: 2.5em;
+    a {
+      text-decoration: none;
+      color: #333333;
+      font-size: 1.3em;
+      user-select: none;
+      padding: .5rem 1rem;
+      outline: none;
+      background: #ffffff;
+      &:hover {
+        border-bottom: 0.3em double rgb(212,75,56);
+        border-top: 0.3em double rgb(212,75,56);
+        color: rgb(212,75,56);
+        text-decoration: none;
+        -webkit-box-shadow: 0px 0px 8px 0px rgba(255,255,255,0.6);
+        -moz-box-shadow: 0px 0px 8px 0px #ffffff;
+        box-shadow: 0px 0px 8px 0px #ffffff;
+      }
+      &:active{
+        border-bottom: 5px double rgb(45, 114, 217);
+        border-top: 5px double rgb(45, 114, 217);
+        color: rgb(45, 114, 217)
+      }
+    }
+  }
+}
+.stat {
+  margin-left: 3rem;
+  h1{
+    font-size: 1.5em;
+    padding-bottom: 0.2em;
+    border-bottom: 7px double #333;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+}
+table.main {
+  font-size: 1.2em;
+  display: inline-block;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+  tr.none_border {
+    td {
+      border: none;
+      padding: 0;
+      a {
+        text-decoration: none;
+        color: #FFF;
+        font-size: 1em;
+        padding: 0.2rem 2rem;
+        outline: medium none;
+        background: none repeat scroll 0% 0% #2D72D9;
+        margin: 0.2em -5.4em;
+        position: absolute;
+        &:hover {
+          background: #ffffff;
+          color:rgb(45, 114, 217);
+          border: 1px solid rgb(45, 114, 217)
+        }
+      }
+    }
+  }
+  th {
+    padding: 3px;
+    color: rgb(212,75,56);
+    border-bottom: 1px solid rgba(110,110,120,0.5);
+  }
+  td {
+    font-size: 0.8em;
+    text-align: center;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    border-bottom: 1px solid rgba(110,110,120,0.5);
+    &:nth-last-child(2),&:nth-last-child(3){
+      border-right: 1px solid rgba(110,110,120,0.1);
+    }
+  }
+  .tr_name{
+    text-align: left;
+    border-right: 1px solid rgba(110,110,120,0.1);
+  }
+  small {
+    letter-spacing: 1px;
+    font-size: 0.5em;
+    color: inherit;
+  }
+}
+@media screen and (max-width: 1600px){
+menu li a {font-size: 1.1em;}
+}
+@media screen and (max-width:1280px) {
+  p, ol, ul, td {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 1em;
+    line-height: 1em;
+  }
+  menu {
+    ul {
+      min-height: 2em;
+      background: rgb(212,75,56);
+      padding: 0.8em;
+      -webkit-padding-start: 2em;
+      padding-left: 2em;
+    }
+    li {
+      margin-right: 0.2em;
+      line-height: 2em;
+      a {
+        font-size: 1em;
+        padding: .5em .5em;
+        &:hover {
+        }
+        &:active{
+          border-bottom: 2px double rgb(45, 114, 217);
+          border-top: 2px double rgb(45, 114, 217);
+        }
+      }
+    }
+  }
+  .stat {margin-left: 0;
+    h1{margin-left: 2em;}
+  }
+  table.stat {
+    margin-left: 0;
+    font-size: 1.15em;
+  }
+}
+@media screen and (max-width:980px) {
+  p, ol, ul, td {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 1em;
+    line-height: 1em;
+  }
+  menu {
+    ul {
+      min-height: 1.5em;
+      background: rgb(212,75,56);
+      padding: 0.8em;
+      -webkit-padding-start: 1em;
+      padding-left: 0.5em;
+    }
+    li {
+      margin-right: 0.05em;
+      line-height: 1.5em;
+      a {
+        font-size: 1.05em;
+        padding: .2em .2em;
+        &:hover {
+        }
+        &:active{
+          border-bottom: 2px double rgb(45, 114, 217);
+          border-top: 2px double rgb(45, 114, 217);
+        }
+      }
+    }
+  }
+  .stat {margin-left: 0;
+    h1{margin-left: 2em;}
+  }
+  table.stat {
+    margin-left: 0;
+    font-size: 0.9em;
+  }
+}

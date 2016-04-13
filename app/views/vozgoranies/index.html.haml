@@ -1,0 +1,100 @@
+%h1
+  Загорания
+  %span#how_much
+  = link_to 'Сбросить фильтр', vozgoranies_path, class: "new_record"
+  = link_to 'Новая запись', new_vozgorany_path, class: "new_record"
+  %span#notice= notice
+%table.stat
+  %thead
+    %tr
+      %th.date Дата
+      %th.msg_time Вр. сообщ.
+      %th.address Адрес
+      %th.object Объект
+      %th.chto_sgorelo Сгорело
+      %th.pogibshie Погибшие
+      %th.gdzs Звеньев
+      %th.technic Техника
+      %th.rtp РТП
+      %th.karaul Караул
+      %th.option Опции
+    %tr.filtres
+      %td
+        от
+        %input.datepicker
+        %br
+        до
+        %input.datepickerker_to
+      %td
+      %td
+        %input{:class => 'address_input'}
+      %td
+        %select{:class => 'object_input'}
+          %option
+          %option Квартиры многоквартирных жилых домах
+          %option Индивидуальные жилые дома граждан
+          %option Надворные постройки на территории частных домовладений
+          %option Бани на территории частных домовладений
+          %option Садовые домики в СНТ
+          %option Бани на участках в СНТ
+          %option Трава
+          %option Производственные здания
+          %option Склады, базы
+          %option Торговля
+          %option Учебные учреждения
+          %option Адм. -общ. здания
+          %option Культурно-зрелищные учреждения
+          %option Детские учреждения
+          %option Животноводческие помещения
+          %option Др. с/х объекты
+          %option Транспорт
+          %option Строительные и бытовые вагончики
+          %option Гаражи
+          %option Подъезд
+          %option Мусоропровод/мусорокамера
+          %option Мусор
+          %option Безхозные строения
+      %td
+      %td
+        %input{type: 'checkbox', class: 'pogibshie_input'}
+      %td
+        %input{type: 'checkbox', class: 'gdzs_input'}
+      %td
+        %input{:class => 'tech_input'}
+      %td
+        %input{:class => 'rtp_input'}
+      %td
+        %select{:class => 'karaul_input'}
+          %option
+          %option 1 караул
+          %option 2 караул
+          %option 3 караул
+          %option 4 караул
+      %td
+  %tbody
+    - @vozgoranies.each do |vozg|
+      %tr.data
+        %td.date
+          = vozg.date.strftime("%d.%m.%y")
+        %td.msg_time
+          = vozg.msg_time.strftime("%k:%M")
+        %td.address
+          = vozg.address
+        %td.object
+          = vozg.object
+        %td.chto_sgorelo
+          = vozg.chto_sgorelo
+        %td.pogibshie
+          = vozg.pogibshie
+        %td.gdzs
+          = vozg.gdzs
+        %td.technic
+          = vozg.technic
+        %td.rtp
+          = vozg.rtp
+        %td.karaul
+          = vozg.karaul
+        %td.options
+          = link_to 'Показать', vozg
+          = link_to 'Изменить', edit_vozgorany_path(vozg)
+%br

@@ -1,0 +1,125 @@
+= form_for @vozgorany do |f|
+  - if @vozgorany.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@vozgorany.errors.count, "error")} prohibited this fire from being saved:"
+      %ul
+        - @vozgorany.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label "Дата:"
+    = f.date_select :date, class: "textbox"
+  .field
+    = f.label "Адрес:"
+    = f.text_field :address, class: "textbox"
+  .field
+    = f.label "Время сообщ:"
+    %span.timepicker
+      = f.time_select :msg_time, class: "textbox"
+  .field
+    = f.label "Объект:"
+    = f.select :object,
+      [["Квартиры многоквартирных жилых домах"],
+      ["Индивидуальные жилые дома граждан"],
+      ["Надворные постройки на территории частных домовладений"],
+      ["Бани на территории частных домовладений"],
+      ["Садовые домики в СНТ"],
+      ["Бани на участках в СНТ"],
+      ["Трава"],
+      ["Производственные здания"],
+      ["Склады, базы"],
+      ["Торговля"],
+      ["Учебные учреждения"],
+      ["Адм. -общ. здания"],
+      ["Культурно-зрелищные учреждения"],
+      ["Детские учреждения"],
+      ["Животноводческие помещения"],
+      ["Др. с/х объекты"],
+      ["Транспорт"],
+      ["Строительные и бытовые вагончики"],
+      ["Гаражи"],
+      ["Подъезд"],
+      ["Мусоропровод/мусорокамера"],
+      ["Мусор"],
+      ["Безхозные строения"],
+      ]
+  .field
+    = f.label "Что сгорело:"
+    = f.text_field :chto_sgorelo, class: "textbox"
+  .field
+    = f.label "Ущерб руб:"
+    = f.text_field :usherb, class: "textbox, num"
+  .field
+    = f.label "Спасено руб:"
+    = f.text_field :spasenorub, class: "textbox, num"
+  .field
+    = f.label "Погибло:"
+    = f.text_field :pogibshie, class: "textbox, num"
+  .field
+    = f.label "Пострадало:"
+    = f.text_field :postradavshie, class: "textbox, num"
+  .field
+    = f.label "Спасено люд:"
+    = f.text_field :spasenolud, class: "textbox, num"
+  .field
+    = f.label "Площадь горения:"
+    = f.text_field :ploshad, class: "textbox, num"
+  .field
+    = f.label "Ствол А:"
+    = f.text_field :stvol_a, class: "textbox, num"
+  .field
+    = f.label "Ствол Б:"
+    = f.text_field :stvol_b, class: "textbox, num"
+  .field
+    = f.label "Ствол АПС:"
+    = f.text_field :stvol_aps, class: "textbox, num"
+  .field
+    = f.label "Ствол ГПС:"
+    = f.text_field :stvol_gps, class: "textbox, num"
+  .field
+    = f.label "Кол-во ГДЗС:"
+    = f.text_field :gdzs, class: "textbox"
+  .field
+    = f.label "Время ГДЗС:"
+    %span.timepicker
+      = f.time_select :gdzs_time, class: "textbox"
+  .field
+    = f.label "Время прибытия:"
+    %span.timepicker
+      = f.time_select :pribytie_time, class: "textbox"
+  .field
+    = f.label "Время первый ствол:"
+    %span.timepicker
+      = f.time_select :pervystvol_time, class: "textbox"
+  .field
+    = f.label "Время локализации:"
+    %span.timepicker
+      = f.time_select :local_time, class: "textbox"
+  .field
+    = f.label "Время 1 ликвидации:"
+    %span.timepicker
+      = f.time_select :licvidation1_time, class: "textbox"
+  .field
+    = f.label "Время 2 ликвидации:"
+    %span.timepicker
+      = f.time_select :licvidation2_time, class: "textbox"
+  .field
+    = f.label "Время возвращения:"
+    %span.timepicker
+      = f.time_select :comeback_time, class: "textbox"
+  .field
+    = f.label "Техника:"
+    = f.text_field :technic, class: "textbox"
+  .field
+    = f.label "РТП:"
+    = f.text_field :rtp, class: "textbox"
+  .field
+    = f.label "Караул:"
+    = f.select :karaul,
+    [["1 караул"],
+    ["2 караул"],
+    ["3 караул"],
+    ["4 караул"],
+    ["Резерв"],
+    ]
+  .actions
+    = f.submit 'Сохранить'

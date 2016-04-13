@@ -1,0 +1,37 @@
+%h1
+  Реагирование ЕДДС на
+  = @edds_prochy.type_viezd
+  = link_to 'Изменить', edit_edds_prochy_path(@edds_prochy)
+  = link_to 'К списку дтп', edds_prochies_path
+  = link_to 'Удалить', @edds_prochy, :method => :delete
+%table.show_stat.main
+  %tr
+    %td.names
+      Дата
+    %td
+      = @edds_prochy.date.strftime("%d.%m.%y")
+  %tr
+    %td.names
+      Время сообщения
+    %td
+      = @edds_prochy.msg_time.strftime("%k:%M")
+  %tr
+    %td.names
+      Адрес
+    %td
+      = @edds_prochy.address
+  %tr
+    %td.names
+      Тип выезда
+    %td
+      = @edds_prochy.type_viezd
+  %tr
+    %td.names
+      Службы
+    %td
+      = @edds_prochy.sluzhby
+  %tr
+    %td.names
+      Описание
+    %td
+      = @edds_prochy.description

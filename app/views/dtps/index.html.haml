@@ -1,0 +1,75 @@
+%h1
+  Список дтп
+  %span#how_much
+  = link_to 'Сбросить фильтр', dtps_path, class: "new_record"
+  = link_to 'Новая запись', new_dtp_path, class: "new_record"
+  %span#notice= notice
+%table.stat
+  %thead
+    %tr
+      %th.date Дата
+      %th.msg_time Время
+      %th.address Адрес
+      %th.pch № ПЧ
+      %th.opisanie Описание
+      %th.asr_opisanie АСР
+      %th.pogiblo Погибло
+      %th.postradalo Пострадало
+      %th.technic_pch Техника
+      %th.karaul Караул
+      %th.options Опции
+    %tr.filtres
+      %td
+        от
+        %input.datepicker
+        %br
+        до
+        %input.datepickerker_to
+      %td
+      %td
+        %input{:class => 'address_input'}
+      %td
+        %input{:class => 'pch_input'}
+      %td
+      %td
+      %td
+        %input{type: 'checkbox', class: 'pogibshie_input'}
+      %td
+        %input{type: 'checkbox', class: 'postradalo_input'}
+      %td
+        %input{:class => 'tech_input'}
+      %td
+        %select{:class => 'karaul_input'}
+          %option
+          %option 1 караул
+          %option 2 караул
+          %option 3 караул
+          %option 4 караул
+      %td
+  %tbody
+    - @dtps.each do |dtp|
+      %tr.data
+        %td.date
+          = dtp.date.strftime("%d.%m.%y")
+        %td.msg_time
+          = dtp.msg_time.strftime("%k:%M")
+        %td.address
+          = dtp.address
+        %td.pch
+          = dtp.pch
+        %td.opisanie
+          = dtp.opisanie
+        %td.asr_opisanie
+          = dtp.asr_opisanie
+        %td.pogibshie
+          = dtp.pogiblo
+        %td.postradalo
+          = dtp.postradalo
+        %td.technic
+          = dtp.technic_pch
+        %td.karaul
+          = dtp.karaul
+        %td.options
+          = link_to 'Показать', dtp
+          = link_to 'Изменить', edit_dtp_path(dtp)
+%br
